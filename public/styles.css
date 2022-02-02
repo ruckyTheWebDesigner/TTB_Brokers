@@ -270,8 +270,8 @@ button.navbar-toggler {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
-  z-index: 4;
-  /* margin-bottom: 40px; */
+  z-index: 4 !important;
+  position: absolute !important;
 }
 
 .panel p {
@@ -312,6 +312,16 @@ button.navbar-toggler {
 @media only screen and (max-width: 600px) {
   .hero {
     height: 56vh;
+  }
+
+  .index-z {
+    margin-top: 8px;
+  }
+
+  .blockquote p {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 5px 8px;
   }
 
   .card {
@@ -365,7 +375,7 @@ button.navbar-toggler {
 
   h1.hero-title {
     margin-top: 35px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     font-size: 1.5rem;
   }
 
