@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 const firebaseConfig = {
   apiKey: 'AIzaSyDv07vt2SSZLxnS7ZU18plSnk6mRqE1kJs',
-  authDomain: 'firstapp-9e997.firebaseapp.com',
+  authDomain: 'https://ctebrokers.com',
   projectId: 'firstapp-9e997',
   storageBucket: 'firstapp-9e997.appspot.com',
   messagingSenderId: '899053817897',
