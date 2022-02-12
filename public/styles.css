@@ -17,6 +17,7 @@
   --footer-color: #3cc8ff;
   --footer-background-color: #3a464f;
   --btn-background: rgb(60, 200, 255);
+  --btn-button: #20628a;
 }
 
 .goog-te-gadget-simple {
@@ -29,8 +30,8 @@
 }
 
 .btn-danger {
-  background-color: var(--orange) !important;
-  border-color: var(--orange) !important;
+  background-color: var(--footer-color) !important;
+  border-color: var(--footer-color) !important;
   color: #fff;
 }
 
@@ -78,7 +79,7 @@ body {
 }
 
 .Users-header {
-  color: var(--yellow);
+  color: var(--btn-button);
   font-size: 2em;
   text-align: center;
   font-weight: bold;
@@ -221,7 +222,7 @@ div.col {
 .fa-chevron-right {
   font-size: 1.5em;
   margin-left: 5px;
-  color: var(--footer-color);
+  color: var(--btn-button);
 }
 
 /* footer */
@@ -281,12 +282,18 @@ button.navbar-toggler {
 }
 
 .btn-login {
-  background-color: var(--btn-background);
-  border-color: var(--btn-background);
+  background-color: var(--btn-button);
+  border-color: var(--btn-button);
   padding: 5px 20px;
   border-radius: 5px;
   color: var(--white);
   text-transform: uppercase;
+}
+
+.gs_reveal {
+  opacity: 0;
+  visibility: hidden;
+  will-change: transform, opacity;
 }
 
 .btn-login:hover {
@@ -303,11 +310,13 @@ button.navbar-toggler {
 }
 
 .footer {
-  background-color: var(--footer-background-color);
+  background-color: var(--btn-button);
   padding: 40px 30px;
   left: 0;
   bottom: 0;
 }
+
+/* register form */
 
 @media only screen and (max-width: 600px) {
   .hero {
@@ -315,7 +324,7 @@ button.navbar-toggler {
   }
 
   .index-z {
-    margin-top: 8px;
+    margin-top: 6px;
   }
 
   .blockquote p {
@@ -389,6 +398,10 @@ button.navbar-toggler {
 
   p.hero-help {
     font-weight: semi-bold;
+  }
+
+  .footer-icons {
+    justify-content: center;
   }
 }
 

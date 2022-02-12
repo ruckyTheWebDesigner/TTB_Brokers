@@ -1,0 +1,98 @@
+<%- include("partials/header"); -%>
+
+ <style>
+  html,
+  body {
+   color: black;
+   overflow: hidden;
+   height: 100vh;
+  }
+
+  * {
+   box-sizing: border-box;
+  }
+
+  .wrapper-content img {
+   height: 50%;
+   width: 50%;
+  }
+
+  .wrapper-content {
+   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+   border-radius: 8px;
+   background-color: transparent;
+
+  }
+
+  .btn-back {
+   background-color: #20628a;
+   border: none;
+   padding: 5px 13px;
+   border-radius: 5px;
+  }
+
+  .btn-back a {
+   color: #fff;
+   text-decoration: none;
+  }
+
+  /* Extra small devices (phones, 600px and down) */
+  @media only screen and (max-width: 800px) {
+   .wrapper-content {
+    height: 70%;
+    width: 95%;
+    margin-top: 20vh;
+    padding: 60px 25px;
+   }
+
+   .wrapper-content img {
+    height: 90%;
+    width: 90%;
+    margin-bottom: 10px;
+   }
+  }
+
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 800px) {
+   .wrapper-content {
+    height: 70%;
+    width: 95%;
+    margin-top: 20vh;
+    padding: 70px 50px;
+   }
+
+   .wrapper-content img {
+    height: 80%;
+    width: 80%;
+    margin-bottom: 10px;
+   }
+  }
+
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+   .wrapper-content {
+    height: 50%;
+    width: 50%;
+    margin-top: 5vh;
+    padding: 70px 50px;
+   }
+
+   .wrapper-content img {
+    height: 60%;
+    width: 60%;
+    margin-bottom: 10px;
+   }
+  }
+ </style>
+
+ <div class="container wrapper mx-auto align-center justify-content-center">
+  <div class="wrapper-content text-center">
+   <img src="/images/undraw_crypto_portfolio(1).svg">
+   <h4 class="my-2">Email verified successfully</h3>
+    <p>Welcome to a Crypto world of unlimited possibilities!!!</p>
+    </p>
+    <button class="btn-back mb-2"><a href="/secure/dashboard">Go to Dashboard
+      <i class="fas ms-1 fa-arrow-right"></i>
+     </a></button>
+  </div>
+ </div>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CTE Brokers</title>
+  <link rel="stylesheet" href="/images/styles.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+    integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous" />
+  <link rel="shortcut icon" href="/images/favicon (2).png" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <script src="/script.js" defer></script>
+</head>
+
+<body>
+  <style>
+    .push-icon {
+      margin-left: 5px;
+      height: 100%;
+      width: 100%;
+    }
+
+    .profile-icons {
+      margin-left: 10px;
+      margin-top: 5px;
+      height: 100%;
+      width: 100%;
+    }
+
+    .to-side {
+      padding-right: 80px !important;
+    }
+
+    .dropdown-menu {
+      min-width: 190px !important;
+    }
+
+    .dropdown-menu[data-bs-popper] {
+      left: -115px !important;
+    }
+
+    .dropdown {
+      margin-right: 20px !important;
+    }
+
+    .dropdown-item {
+      color: #20628a;
+    }
+
+    .dropdown img {
+      height: 100%;
+      width: 100%;
+    }
+
+    a.navbar-brand img {
+      height: 80%;
+      width: 80%;
+    }
+  </style>
+  <nav class="navbar mob-nav navbar-light">
+    <div class="container-fluid justify-content-between">
+      <a class="navbar-brand" href="/secure/dashboard"><img src="/images/LogoMakr.png" alt="logo" /></a>
+
+      <div class="dropdown">
+        <img class="user-avatar dropdown-toggle align-center" data-bs-toggle="dropdown" aria-expanded="true"
+          src="https://img.icons8.com/fluency/48/000000/checked-user-male.png" />
+
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item justify-content-around" href="/secure/accounts">
+              <div class="d-flex align-center justify-content-around">
+                <i class="fas fa-user profile-icons"></i>
+                <h5>Account</h5>
+              </div>
+            </a></li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+
+          <li><a class="dropdown-item justify-content-around" href="#">
+              <div class="d-flex align-center justify-content-around">
+                <i class="fas fa-chart-line profile-icons"></i>
+                <h5>Analytics</h5>
+              </div>
+            </a></li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+
+
+          <li><a class="dropdown-item justify-content-around" href="#">
+              <div class="d-flex align-center justify-content-around">
+                <i class="fas fa-cogs profile-icons"></i>
+                <h5>Settings</h5>
+              </div>
+            </a></li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+
+          <li><a class="dropdown-item justify-content-around" href="#">
+              <div class="d-flex align-center justify-content-around">
+                <i class="fas fa-question profile-icons"></i>
+                <h5>Need Help?</h5>
+              </div>
+            </a></li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+
+          <li><a class="dropdown-item justify-content-around" href="/signout">
+              <div class="d-flex align-center justify-content-around">
+                <i class="fas fa-sign-out-alt  profile-icons"></i>
+                <h5>Log Out</h5>
+              </div>
+            </a></li>
+
+        </ul>
+      </div>
+  </nav>
+
+  <header class="header">
+    <button class="menu-icon-btn" data-menu-icon-btn>
+      <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" class="menu-icon">
+        <g>
+          <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+        </g>
+      </svg>
+    </button>
+    <p id="demo" class="pt-2"></p>
+
+  </header>
+  <div class="containers">
+    <aside class="sidebar" data-sidebar>
+      <div class="top-sidebar">
+        <a href="#" class="channel-logo"><img src="/images/abstract-847.png" alt="Channel Logo"></a>
+        <div class="hidden-sidebar your-channel">@username</div>
+        <div class="hidden-sidebar channel-name">Web Dev Simplified</div>
+      </div>
+      <div class="middle-sidebar">
+        <ul class="sidebar-list">
+          <li class="sidebar-list-item active">
+            <a href="/secure/dashboard" class="sidebar-link">
+              <svg class="sidebar-icon" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false">
+                <g>
+                  <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"></path>
+                </g>
+              </svg>
+              <div class="hidden-sidebar">Dashboard</div>
+            </a>
+          </li>
+
+
+          <li class="sidebar-list-item">
+            <a href="#" class="sidebar-link">
+              <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" class="sidebar-icon">
+                <g>
+                  <path
+                    d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z">
+                  </path>
+                </g>
+              </svg>
+              <div class="hidden-sidebar ">Analytics</div>
+            </a>
+          </li>
+
+
+          <li class="sidebar-list-item">
+            <a href="/profile" class="sidebar-link">
+              <i class="fas fa-user push-icon"></i>
+              <div class="hidden-sidebar to-side">Profile</div>
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="/update" class="sidebar-link">
+              <i class="fas fa-cogs push-icon"></i>
+              <div class="hidden-sidebar to-side">Settings</div>
+            </a>
+          </li>
+          <li class="sidebar-list-item">
+            <a href="contact-us" class="sidebar-link">
+              <i class="fas fa-question push-icon"></i>
+              <div class="hidden-sidebar to-side">Need Help</div>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="bottom-sidebar">
+        <ul class="sidebar-list">
+          <li class="sidebar-list-item">
+            <a href="/signout" class="sidebar-link">
+              <i class="fas fa-sign-out-alt push-icon"></i>
+              <div class="hidden-sidebar to-side">Log Out</div>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </aside>

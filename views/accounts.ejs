@@ -1,0 +1,289 @@
+<%- include("partials/dashboardhead"); -%>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+    body,
+    html {
+      height: 100%;
+      margin: 0;
+      color: #000000;
+    }
+
+    .btn {
+      background-color: #20628a;
+      color: #FFFF;
+      border: none;
+      padding: 6px 20px;
+      width: 100%;
+    }
+
+    .profile-img img {
+      height: 60px;
+      width: 60px;
+      margin-right: 15px;
+    }
+
+    .contact h4 {
+      margin-right: 10px;
+    }
+
+    h4 {
+      color: #20628a;
+    }
+
+    i.fas,
+    i.fab {
+      color: #20628a;
+    }
+
+    .phone p,
+    .email p {
+      margin-left: 10px !important;
+      margin-top: -3px !important;
+    }
+
+    p {
+      margin: 0 !important;
+      margin-top: 2px !important;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    .contact h6 {
+      margin-right: 10px;
+    }
+
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 600px) {
+
+      .profile-details,
+      .wallet-wrapper,
+      .form {
+        margin-bottom: 30px;
+      }
+
+      p {
+        font-size: 12px;
+        font-weight: 500;
+      }
+    }
+
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+    @media only screen and (min-width: 600px) {
+
+      .profile-details,
+      .wallet-wrapper,
+      .form {
+        margin-bottom: 30px !important;
+      }
+    }
+
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 768px) {
+
+      .profile-details,
+      .wallet-wrapper,
+      .form {
+        margin-right: 70px !important;
+      }
+
+      p {
+        font-size: 13px;
+        font-weight: 500;
+      }
+    }
+  </style>
+  <main class="content container justify-content-center">
+    <div class=" d-flex flex-column flex-md-column flex-lg-row">
+      <div class="profile-details">
+        <div class="d-flex profile-img ">
+          <img src="https://img.icons8.com/fluency/48/000000/checked-user-male.png">
+          <div class="profile-info justify-content-between">
+            <h6>
+              <%= displayName %>
+            </h6>
+            <div class="phone d-flex align-center">
+              <i class="fas fa-phone"></i>
+              <p>
+                <%= phone %>
+              </p>
+            </div>
+            <div class="d-flex email align-center">
+              <i class="fas fa-envelope"></i>
+              <p>
+                <%= email %>
+              </p>
+            </div>
+            <div class="d-flex align-center">
+              <p>member since:</p>
+              <p>
+                <%= registrationTime %>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <hr class="dropdown-divider">
+
+        <div class="mb-3">
+          <div class="contact d-flex">
+            <h6>Country</h6>
+            <p>
+              <%= country %>
+            </p>
+          </div>
+
+          <div class="contact d-flex ">
+            <h6>Total Log</h6>
+            <p class="align-center">Street, City, State, Zip</p>
+          </div>
+
+          <div class="contact d-flex">
+            <h6>Last Log</h6>
+            <p id="log"></p>
+          </div>
+        </div>
+
+        <div class="profile-icons d-flex">
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-twitter"></i>
+        </div>
+
+      </div>
+
+      <div class="wallet-wrapper mb-3">
+        <h4>Wallet</h4>
+        <hr class="dropdown-divider">
+        <div class="wallet-details">
+          <p>Avaliable BTC</p>
+          <h3 id="available-btc">0.00</h3>
+        </div>
+
+        <div class="d-flex">
+          <div class="wallet-info me-3">
+            <p>Buy this month</p>
+            <h3 id="buy">
+              0.00
+            </h3>
+          </div>
+
+          <div class="wallet-info">
+            <p>Withdraw this month</p>
+            <h3 id="sell">
+              0.00
+            </h3>
+          </div>
+        </div>
+
+
+        <script class="mt-2" async src="https://static.coinstats.app/widgets/coin-price-widget.js"></script>
+        <coin-stats-ticker-widget coin-id="bitcoin" locale="en" currency="USD" rank-background="#FFA959"
+          background="#112b4a" status-up-color="#74D492" status-down-color="#FE4747" rank-text-color="#1C1B1B"
+          text-color="#FFFFFF" border-color="#112b4a" type="large" font="Roboto, Arial, Helvetica" height="182"
+          width="350">
+        </coin-stats-ticker-widget>
+
+      </div>
+
+
+
+      <form action="" method="post" class="justify-content-center mb-3 form w-100">
+        <h4>Withdraw</h4>
+        <hr class="dropdown-divider">
+        <div class="mb-2">
+          <input type="text" class="form-control" placeholder="Amount" id="exampleInputEmail1"
+            aria-describedby="emailHelp">
+        </div>
+        <div class="mb-2">
+          <input type="text" class="form-control" placeholder="Account name" id="exampleInputEmail1"
+            aria-describedby="emailHelp">
+        </div>
+        <div class="mb-2">
+          <input type="text" class="form-control" placeholder="Account number" id="exampleInputEmail1"
+            aria-describedby="emailHelp">
+        </div>
+        <div class="mb-2">
+          <input type="text" class="form-control" placeholder="Bank name" id="exampleInputEmail1"
+            aria-describedby="emailHelp">
+        </div>
+        <div class="mb-2">
+          <input type="text" class="form-control" placeholder="Bank code if applicable" id="exampleInputEmail1"
+            aria-describedby="emailHelp">
+        </div>
+        <div class="mb-2">
+          <input type="text" class="form-control" placeholder="Swift code if applicable" id="exampleInputEmail1"
+            aria-describedby="emailHelp">
+        </div>
+
+        <button class="btn">Withdraw</button>
+      </form>
+    </div>
+
+    <div class="table">
+
+      <table class="table">
+        <thead>
+          <tr>
+            <h4>All Activities</h4>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">
+              <i class="fas fa-check"></i>
+            </th>
+            <td>Sold</td>
+            <td>BTC</td>
+            <td>Using - Card *******8475</td>
+            <td>-0.000242 BTC</td>
+            <td>-0.125 USD</td>
+          </tr>
+
+          <tr>
+            <th scope="row">
+              <i class="fas fa-check"></i>
+            </th>
+            <td>Sold</td>
+            <td>XRP</td>
+            <td>Using - Card *******8475</td>
+            <td>-0.000242 BTC</td>
+            <td>-0.125 USD</td>
+          </tr>
+
+          <tr>
+            <th scope="row">
+              <i class="fas fa-check"></i>
+            </th>
+            <td>Sold</td>
+            <td>LTC</td>
+            <td>Using - Card *******8475</td>
+            <td>--0.000242 BTC</td>
+            <td>-0.125 USD</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  </div>
+
+  <script type="text/javascript">
+    document.getElementById("log").innerHTML = new Date();
+
+    document.getElementById('date').innerHTML = 'Last Updated ' + text
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/TextPlugin.min.js"></script>
+
+  <script>
+    gsap.registerPlugin(TextPlugin);
+    // gsap.to('#available-btc', { duration: 5, x: 100 });
+    // gsap.to('#sell', { duration: 5, x: 100 });
+    // gsap.to('#buy', { duration: 5, x: 100 });
+
+
+  </script>
+
+  <%- include("partials/dashfooter"); -%>

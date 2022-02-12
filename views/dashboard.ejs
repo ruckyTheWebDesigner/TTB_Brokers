@@ -1,0 +1,326 @@
+<%- include("partials/dashboardhead"); -%>
+
+  <style>
+    body,
+    html {
+      height: 100%;
+      margin: 0;
+      width: 100%;
+    }
+
+    body,
+    html {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+    }
+
+    h4 {
+      color: #20628a;
+    }
+
+    .coins-wrapper p {
+      color: #20628a;
+      font-weight: 500;
+    }
+
+    .green-bg {
+      background-color: #20628a !important;
+    }
+
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 600px) {
+      h4 {
+        font-weight: 500;
+        font-size: 1em;
+      }
+    }
+  </style>
+
+  <main class="content container-fluid ">
+    <!-- TradingView Widget BEGIN -->
+    <div class="tradingview-widget-container my-1">
+      <div class="tradingview-widget-container__widget"></div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
+        async>
+          {
+            "symbols": [
+              {
+                "proName": "FOREXCOM:SPXUSD",
+                "title": "S&P 500"
+              },
+              {
+                "proName": "FOREXCOM:NSXUSD",
+                "title": "US 100"
+              },
+              {
+                "proName": "FX_IDC:EURUSD",
+                "title": "EUR/USD"
+              },
+              {
+                "proName": "BITSTAMP:BTCUSD",
+                "title": "Bitcoin"
+              },
+              {
+                "proName": "BITSTAMP:ETHUSD",
+                "title": "Ethereum"
+              }
+            ],
+              "showSymbolLogo": true,
+                "colorTheme": "dark",
+                  "isTransparent": true,
+                    "displayMode": "compact",
+                      "locale": "en"
+          }
+        </script>
+    </div>
+    <!-- TradingView Widget END -->
+
+    <div class="d-flex greeting-login">
+      <div class="d-flex">
+        <h4 id="greeting">
+        </h4>
+        <h4 class=" mx-1 displayName">
+          <%= displayName %>
+        </h4>
+      </div>
+
+      <p id="lastsigned"></p>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="portfolio-balance pt-2">
+          <div class="wrapper d-flex flex-column justify-content-between">
+            <div class="wrapper-left d-flex flex-row justify-content-between">
+              <div class="portfolio-title">
+                <h5>My Portfolio</h5>
+                <h2 class="">
+                  0.00
+                </h2>
+              </div>
+
+              <div class="wrapper-right ">
+                <img src="https://img.icons8.com/ios/50/000000/bitcoin-exchange--v1.png" />
+              </div>
+            </div>
+          </div>
+
+          <div class="">
+            <div class="d-flex">
+              <img class="" src="/images/icons8-bitcoin.svg">
+              <div>
+                <p class="pt-2">Avaliable Balance(BTC)</p>
+                <h2 class="">0.000000</h2>
+              </div>
+            </div>
+
+            <div class="coins-wrapper">
+              <p>Coins</p>
+              <div class="d-flex coins-img mb-4">
+                <img src="/images/ethereum-eth-logo.svg">
+                <img class="coin-logo" src="/images/tether-usdt-logo.svg">
+                <img class="coin-logo" src="/images/usd-coin-usdc-logo.svg">
+                <img class="coin-logo" src="/images/shiba-inu-shib-logo.svg">
+                <img class="coin-logo" src="/images/cardano-ada-logo.svg">
+                <img class="coin-logo" src="/images/dogecoin-doge-logo.svg">
+                <img class="coin-logo" src="/images/polygon-matic-logo.svg">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="button-flex d-flex justify-content-center">
+          <button class="btn">
+            <i class="fas fa-download"></i><a href="#">Deposit</a></button>
+
+          <button class="btn">
+            <i class="fas fa-upload"></i><a href="/secure/accounts">Withdraw</a></button>
+        </div>
+
+        <h4 class="mt-lg-5">Live Prices</h4>
+        <div class="portfolio-balance">
+
+          <script src="https://static.coinstats.app/widgets/coin-chart-widget.js"></script>
+          <coin-stats-chart-widget type="large" coin-id="bitcoin" width="550" chart-height="250" currency="USD"
+            locale="en" bg-color="rgba(28,27,27,0)" status-up-color="#74D492" status-down-color="#FE4747"
+            text-color="#000000" buttons-color="#1C1B1B" chart-color="#FFA959"
+            chart-gradient-from="rgba(255,255,255,0.07)" chart-gradient-to="rgba(0,0,0,0)"
+            border-color="rgba(255,255,255,0.15)" btc-color="#6DD400" eth-color="#67B5FF"
+            chart-label-background="#000000" font="Roboto, Arial, Helvetica" candle-grids-color="rgba(255,255,255,0.1)">
+          </coin-stats-chart-widget>
+
+        </div>
+
+      </div>
+
+
+      <div class="col">
+        <div class="favorites-header d-flex justify-content-between mt-3">
+          <h4>Favorites</h4>
+          <h4>See All</h4>
+        </div>
+        <div class="d-flex flex-row portfolio flex-md-column flex-lg-column">
+
+          <div class="portfolio-balance green-bg trading-widget1 mb-lg-3">
+
+            <script async src="https://static.coinstats.app/widgets/coin-price-widget.js"></script>
+            <coin-stats-ticker-widget coin-id="bitcoin" locale="en" currency="USD" rank-background="#FFA959"
+              background="transparent" status-up-color="#74D492" status-down-color="#FE4747" rank-text-color="#1C1B1B"
+              text-color="#FFFFFF" border-color="transparent" type="large" font="Roboto, Arial, Helvetica" height="150"
+              width="350"></coin-stats-ticker-widget>
+          </div>
+
+          <div class="portfolio-balance mb-lg-3">
+            <script async src="https://static.coinstats.app/widgets/coin-price-widget.js"></script>
+            <coin-stats-ticker-widget coin-id="ethereum" locale="en" currency="USD" rank-background="#FFA959"
+              background="rgba(255,255,255,0)" status-up-color="#74D492" status-down-color="#FE4747"
+              rank-text-color="#1C1B1B" text-color="#000000" border-color="rgba(255,255,255,0)" type="large"
+              font="Roboto, Arial, Helvetica" height="150" width="350"></coin-stats-ticker-widget>
+          </div>
+
+
+
+          <div class="portfolio-balance mb-lg-3 green-bg">
+            <script async src="https://static.coinstats.app/widgets/coin-price-widget.js"></script>
+            <coin-stats-ticker-widget coin-id="tether" locale="en" currency="USD" rank-background="#FFA959"
+              background="transparent" status-up-color="#74D492" status-down-color="#FE4747" rank-text-color="#1C1B1B"
+              text-color="#FFFFFF" border-color="transparent" type="large" font="Roboto, Arial, Helvetica" height="150"
+              width="350"></coin-stats-ticker-widget>
+          </div>
+
+          <div class="portfolio-balance">
+            <script async src="https://static.coinstats.app/widgets/coin-price-widget.js"></script>
+            <coin-stats-ticker-widget coin-id="binance-coin" locale="en" currency="USD" rank-background="#FFA959"
+              background="rgba(255,255,255,0)" status-up-color="#74D492" status-down-color="#FE4747"
+              rank-text-color="#1C1B1B" text-color="#000000" border-color="rgba(255,255,255,0)" type="large"
+              font="Roboto, Arial, Helvetica" height="150" width="350"></coin-stats-ticker-widget>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <div class="d-flex flex-column flex-md-row flex-lg-row align-center mt-3">
+      <div>
+        <h4>Exchange</h4>
+        <div class="portfolio-balance align-center">
+          <script src="https://static.coinstats.app/widgets/coin-converter-widget.js"></script>
+          <coin-stats-converter-widget sell-coin-id="bitcoin" buy-coin-id="ethereum" locale="en"
+            background="rgba(28,27,27,0)" text-color="#000000" border-color="rgba(255,255,255,0)"
+            rotate-button-color="rgba(255,255,255,0.35)" type="large" font="Roboto, Arial, Helvetica" width="400">
+          </coin-stats-converter-widget>
+        </div>
+      </div>
+
+      <div>
+        <div class="portfolio-balance align-center">
+          <script async src="https://static.coinstats.app/widgets/coin-calculator-widget.js"></script>
+          <coin-stats-calculator-widget type="invest" locale="en" currency="USD" is-editable="true" text-color="#000000"
+            selection-color="#FFA959" background="rgba(255,255,255,0)" font="Roboto, Arial, Helvetica"
+            border-color="rgba(255,255,255,0)"></coin-stats-calculator-widget>
+        </div>
+      </div>
+
+      <div>
+        <div class="portfolio-balance">
+          <script async src="https://static.coinstats.app/widgets/coin-list-widget.js"></script>
+          <coin-stats-list-widget top-coin="5" locale="en" currency="USD" bg-color="rgba(255,255,255,0)"
+            status-up-color="#74D492" status-down-color="#FE4747" text-color="#000000" font="Roboto, Arial, Helvetica"
+            border-color="rgba(255,255,255,0.15)" width="486"></coin-stats-list-widget>
+        </div>
+      </div>
+    </div>
+
+    <h4 class="mt-3">Insights</h4>
+    <div class="d-flex insights-widget align-center">
+
+      <div class="portfolio-balance green-bg">
+        <script src="https://static.coinstats.app/widgets/insights-widget.js"></script>
+        <coin-stats-insight-widget type="tradesToday" bg-color="transparent" text-color="#ffffff"
+          chart-primary-color="#FFA959" chart-secondary-color="#E9BC48" button-color="#FFA959"
+          border-color="transparent" font="Roboto, Arial, Helvetica" coin-id="bitcoin">
+        </coin-stats-insight-widget>
+      </div>
+
+      <div class="portfolio-balance">
+        <coin-stats-insight-widget type="howManyUsersHold" bg-color="rgba(28,27,27,0)" text-color="#000000"
+          chart-primary-color="#FFA959" chart-secondary-color="#E9BC48" button-color="#FFA959"
+          border-color="rgba(255,255,255,0)" font="Roboto, Arial, Helvetica" coin-id="bitcoin">
+        </coin-stats-insight-widget>
+      </div>
+
+      <div class="portfolio-balance">
+        <coin-stats-insight-widget type="dominance" bg-color="rgba(28,27,27,0)" text-color="#000000"
+          chart-primary-color="#FFA959" chart-secondary-color="#E9BC48" button-color="#FFA959"
+          border-color="rgba(255,255,255,0)" font="Roboto, Arial, Helvetica" coin-id="bitcoin">
+        </coin-stats-insight-widget>
+      </div>
+
+      <div class="portfolio-balance">
+        <coin-stats-insight-widget type="whereUsersHold" bg-color="rgba(28,27,27,0)" text-color="#000000"
+          chart-primary-color="#FFA959" chart-secondary-color="#E9BC48" button-color="#FFA959"
+          border-color="rgba(255,255,255,0)" font="Roboto, Arial, Helvetica" coin-id="bitcoin">
+        </coin-stats-insight-widget>
+      </div>
+    </div>
+  </main>
+  </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/TextPlugin.min.js"></script>
+
+  <script>
+
+    gsap.registerPlugin(ScrollTrigger, TextPlugin);
+    gsap.to('.account-balance', { duration: 5, text: "$38,509.00", ease: "power2" });
+
+    gsap.to('.account-btc', { duration: 5, text: "0.01487783 ($49,800)", ease: "power2" });
+
+    function animateFrom(elem, direction) {
+      direction = direction || 1;
+      var x = 0,
+        y = direction * 100;
+      if (elem.classList.contains("gs_reveal_fromLeft")) {
+        x = -100;
+        y = 0;
+      } else if (elem.classList.contains("gs_reveal_fromRight")) {
+        x = 100;
+        y = 0;
+      }
+      elem.style.transform = "translate(" + x + "px, " + y + "px)";
+      elem.style.opacity = "0";
+      gsap.fromTo(elem, { x: x, y: y, autoAlpha: 0 }, {
+        duration: 1.25,
+        x: 0,
+        y: 0,
+        autoAlpha: 1,
+        ease: "expo",
+        overwrite: "auto"
+      });
+    }
+
+    function hide(elem) {
+      gsap.set(elem, { autoAlpha: 0 });
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.utils.toArray(".gs_reveal").forEach(function (elem) {
+        hide(elem); // assure that the element is hidden when scrolled into view
+
+        ScrollTrigger.create({
+          trigger: elem,
+          onEnter: function () { animateFrom(elem) },
+          onEnterBack: function () { animateFrom(elem, -1) },
+          onLeave: function () { hide(elem) } // assure that the element is hidden when scrolled into view
+        });
+      });
+    });
+
+  </script>
+
+  <%- include("partials/dashfooter"); -%>

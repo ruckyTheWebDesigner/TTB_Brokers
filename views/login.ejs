@@ -1,0 +1,301 @@
+<%- include("partials/header"); -%>
+  <style>
+    body {
+      color: black !important;
+    }
+
+    .left {
+      background-image: linear-gradient(to left, #20628a 0%, #112b4a 50%);
+      padding: 30px;
+    }
+
+    .input-group-text {
+      background-color: #20628a !important;
+      border-color: #20628a;
+    }
+
+    .far,
+    .fas {
+      color: #fff !important;
+    }
+
+    h1 span {
+      color: #20628a;
+    }
+
+    h1 {
+      font-weight: 700;
+    }
+
+    .right-form {
+      align-items: center;
+      justify-content: center;
+    }
+
+    .left-img h4 {
+      color: #fff;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .left-img h4 span {
+      color: #20628a;
+    }
+
+    .alert {
+      align-items: center;
+      justify-content: center;
+      height: 50px;
+      background-color: #112b4aa2;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+
+    #alert-text {
+      text-align: center;
+      align-items: center;
+      color: white;
+      font-size: 0.85em;
+      font-weight: 500;
+    }
+
+    a.reset-password {
+      text-decoration: none;
+      margin-left: 60px;
+      color: #20628a;
+    }
+
+    a.signup {
+      text-decoration: none;
+      margin-left: 6px;
+      color: #20628a;
+      margin-bottom: 2px;
+      padding-bottom: 5px
+    }
+
+    button.btn {
+      background-color: #20628a;
+      padding: 5px 20px;
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    button.btn:hover {
+      color: #20628a;
+      background-color: #112b4a;
+    }
+
+    input[type="email"]:focus {
+      border-color: #20628a;
+    }
+
+    input[type="password"]:focus {
+      border-color: #20628a;
+    }
+
+    input[type="checkbox"] {
+      background-color: #20628a;
+    }
+
+    input:checked {
+      background-color: #20628a !important;
+      border-color: #20628a !important;
+      color: #fff
+    }
+
+    .input-group:focus {
+      border-color: #20628a !important;
+    }
+
+    i.fab {
+      margin-right: 10px;
+    }
+
+    .footer-bottom {
+      margin-top: 60px;
+      margin-bottom: 15px;
+    }
+
+    #footer {
+      font-size: 12px;
+    }
+
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 600px) {
+      .left {
+        height: 45vh;
+      }
+
+      .left-img {
+        padding: 5px 10px;
+        text-align: center;
+      }
+
+      .right-form {
+        margin-top: 5vh;
+      }
+
+      .right-form h1 {
+        font-size: 1.3rem;
+      }
+
+      .left-img img {
+        height: 90%;
+        width: 90%;
+        margin-top: -20px;
+      }
+
+      .finance-header {
+        padding: 10px;
+      }
+    }
+
+    /* Medium devices (landscape tablets, 600px and up) */
+    @media only screen and (min-width: 600px) {
+      .left {
+        height: 50vh;
+        justify-content: center;
+      }
+
+      .right-form {
+        margin-top: 5vh;
+      }
+
+      .left-img img {
+        height: 90%;
+        width: 90%;
+      }
+    }
+
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) {
+      .left {
+        height: 100vh;
+        width: 90vw;
+      }
+
+      body {
+        overflow: hidden;
+      }
+
+      .left-img {
+        padding: 20px 30px;
+      }
+
+      .right-form {
+        height: 100vh;
+      }
+
+      .finance-header {
+        padding: 10px 60px;
+      }
+
+      .left-img img {
+        margin-top: 1vh;
+      }
+    }
+
+
+    /* Extra large devices (large laptops and desktops, 1200px and up) */
+    @media only screen and (min-width: 1200px) {
+      .left {
+        height: 100vh;
+        width: 90vw;
+      }
+
+      body {
+        overflow: hidden;
+      }
+
+      .right-form {
+        height: 90vh;
+      }
+
+      .left-img img {
+        margin-top: -5px;
+      }
+
+      .left-img {
+        padding: 20px 40px;
+        text-align: center;
+      }
+
+      .finance-header {
+        padding: 10px 60px;
+      }
+
+      form {
+        margin-top: 30px;
+      }
+
+    }
+  </style>
+
+  <div class="d-flex flex-column flex-md-column flex-lg-row">
+    <div class="left d-flex flex-row flex-md-row flex-lg-column">
+      <div class="left-img">
+        <img src="/images/business-3d-354.png">
+        <h4 class="finance-header">Stay in control of <span>your crypto Assets</span> </h4>
+      </div>
+    </div>
+
+    <div class="container right-form">
+      <form action="/login" method="post">
+        <h1>Welcome <span>Back!</span> </h1>
+
+        <div class="alert" role="alert">
+          <h6 id="alert-text">
+            <%= message %>
+          </h6>
+        </div>
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <div class="mb-3 input-group">
+          <span class="input-group-text" id="basic-addon1"><i class="far fa-envelope"></i></span>
+          <input type="email" name="email" class="form-control shadow-none" id="validationCustom01"
+            aria-describedby="emailHelp" required>
+
+        </div>
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+
+        <div class="mb-3 input-group">
+          <span class="input-group-text" id="basic-addon1"><i class="fas fa-lock"></i></span>
+
+          <input type="password" class="form-control shadow-none" name="password" id="exampleInputPassword1" required>
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input shadow-none" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Remember me</label>
+          <a class="reset-password" href="/resetpassword">Forget Password?</a>
+        </div>
+
+        <button type="submit" class="btn mb-3 shadow-none">Login</button>
+
+        <div class="d-flex justify-content-center form-signup">
+          <h6>Dont have an account?</h6>
+          <a class="signup" href="/register">Sign up</a>
+        </div>
+
+
+        <div class="d-flex flex-column flex-md-row flex-lg-row container justify-content-center footer-bottom">
+          <div class="footer-copyright text-center me-2">
+            <p id="footer"></p>
+          </div>
+
+          <div class="footer-icons d-flex">
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+          </div>
+        </div>
+      </form>
+
+
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    const d = new Date().getFullYear();
+    document.getElementById('footer').innerHTML =
+      '© ' + d + ' TTB Group Inc. All rights reserved.'
+
+  </script>
