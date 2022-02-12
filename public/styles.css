@@ -301,6 +301,11 @@ button.navbar-toggler {
   color: var(--btn-background);
 }
 
+img.navbar-brand {
+  height: auto;
+  width: 50%;
+}
+
 .fed-card {
   background-image: url(/images/will-updates.jpg) !important;
   background-position: center !important;
@@ -321,10 +326,6 @@ button.navbar-toggler {
 @media only screen and (max-width: 600px) {
   .hero {
     height: 56vh;
-  }
-
-  .index-z {
-    margin-top: 6px;
   }
 
   .blockquote p {
@@ -384,7 +385,7 @@ button.navbar-toggler {
 
   h1.hero-title {
     margin-top: 35px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     font-size: 1.5rem;
   }
 
