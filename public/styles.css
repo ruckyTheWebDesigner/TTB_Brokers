@@ -301,11 +301,6 @@ button.navbar-toggler {
   color: var(--btn-background);
 }
 
-img.navbar-brand {
-  height: auto;
-  width: 50%;
-}
-
 .fed-card {
   background-image: url(/images/will-updates.jpg) !important;
   background-position: center !important;
@@ -332,6 +327,11 @@ img.navbar-brand {
     font-size: 16px;
     font-weight: 500;
     padding: 5px 8px;
+  }
+
+  img.navbar-brand {
+    height: auto;
+    width: 50%;
   }
 
   .card {

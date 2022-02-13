@@ -4,7 +4,7 @@ let copyright = d.getFullYear()
 document.getElementById('date').innerHTML = 'Last Updated ' + text
 
 document.getElementById('footer-copyright').innerHTML =
-  '© ' + copyright + ' TTB Group Inc. All rights reserved.'
+  '© ' + copyright + ' CTE Group Inc. All rights reserved.'
 
 //Get the button
 let mybutton = document.getElementById('btn-back-to-top')

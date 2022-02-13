@@ -20,9 +20,9 @@ const {
 const auth = getAuth(app)
 
 const actionCodeSettings = {
-  url: 'https://ctebrokers/login',
+  url: 'https://ctebrokers.com/login',
   // This must be true.
-  handleCodeInApp: true,
+  handleCodeInApp: false,
 }
 
 const db = getFirestore(app)
