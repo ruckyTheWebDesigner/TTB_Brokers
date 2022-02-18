@@ -4,6 +4,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Thasadith:wght@700&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -39,15 +41,16 @@ html,
 body {
   margin: 0;
   height: 100%;
-  width: 100%;
+  max-width: 100%;
   background-color: white !important;
-  color: #fff;
+  color: var(--white);
   /* font-family: 'Roboto', sans-serif; */
   /* font-family: 'Lato', sans-serif; */
   font-family: 'Poppins', sans-serif;
 }
 
 .hero {
+  padding-top: 60px;
   height: 70vh;
   background-image: url(./images/hero.png);
   background-color: rgba(0, 0, 0, 0);
@@ -55,10 +58,12 @@ body {
   background-size: cover;
 }
 
+.offcanvas-top {
+  height: 60% !important;
+}
+
 .gradient-section {
-  /* height: 40vh; */
   background-image: linear-gradient(to bottom, #20628a 0%, #112b4a 15%);
-  /* margin-bottom: 40px; */
 }
 
 .gradient-section h3 {
@@ -69,21 +74,6 @@ body {
 .row > * {
   padding-right: 0 !important;
   padding-left: 0 !important;
-}
-
-.trader {
-  color: black !important;
-  background-image: url(/images/blue-grid-tall.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.Users-header {
-  color: var(--btn-button);
-  font-size: 2em;
-  text-align: center;
-  font-weight: bold;
-  margin-top: 30px;
 }
 
 h1.market-title {
@@ -117,6 +107,21 @@ button a {
   margin-right: 30px;
 }
 
+.offcanvas-header {
+  padding-left: 25px !important;
+  padding-top: 30px !important;
+}
+
+.offcanvas-body {
+  padding-left: 33px !important;
+  padding-top: 10px !important;
+}
+
+button.btn-close {
+  font-size: 1.5em !important;
+  color: #20628a !important;
+}
+
 .offcanvas {
   color: black;
 }
@@ -144,31 +149,28 @@ a.item-canvas {
   color: black;
 }
 
-/* carousel */
-.item {
-  align-items: center;
-  border-radius: 10px;
-  width: 60%;
-  justify-content: center;
-  text-align: center;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  padding: 30px 10px;
-}
-
-.item img {
-  margin: 10px;
-  height: 120px;
-  width: 120px;
-  border-radius: 50%;
-}
-
 /* back to top  */
 #btn-back-to-top {
   position: fixed;
   bottom: 20px;
   right: 20px;
   display: none;
-  z-index: 4;
+  z-index: 99;
+  background-color: var(--btn-background);
+  border-radius: 50%;
+  padding: 10px;
+}
+
+i.fa-rocket {
+  transform: rotate(-45deg);
+  color: var(--white);
+  font-size: 1.7em;
+}
+
+.btn-backToTop {
+  background-color: var(--btn-background);
+  border-radius: 50%;
+  padding: 12px;
 }
 
 .fa-arrow-up {
@@ -290,10 +292,125 @@ button.navbar-toggler {
   text-transform: uppercase;
 }
 
+i.fa-bars {
+  color: #20628a !important;
+  font-size: 30px !important;
+}
+
 .gs_reveal {
   opacity: 0;
   visibility: hidden;
   will-change: transform, opacity;
+}
+
+.investment-container {
+  width: 100%;
+  box-shadow: 0px 5px 15px 0px rgb(59 55 188 / 50%);
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 50px 30px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.investment-wrapper {
+  padding: 5px 15px;
+  color: black !important;
+  justify-content: center;
+}
+
+.features-header {
+  color: black !important;
+  text-align: center;
+}
+
+.features-header h4,
+.customers-header h4,
+.aff-left h4,
+.testimonial-video h4 {
+  color: var(--btn-button);
+  text-transform: uppercase;
+  font-size: 24px;
+}
+
+.features-header h2,
+.customers-header h2,
+.aff-left h2,
+.testimonial-video h2 {
+  font-family: 'Thasadith', sans-serif;
+  font-size: 50px;
+}
+
+.feature-item {
+  border: 1px solid #e5e5e5;
+  background-color: #ffffff;
+  padding: 20px 30px;
+  color: black !important;
+  margin-right: 30px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.feature-item:hover {
+  box-shadow: 0px 5px 15px 0px var(--btn-button);
+  background-color: #fff;
+}
+
+.feature-item a {
+  text-decoration: none;
+  color: var(--btn-button);
+  font-weight: 500;
+}
+
+.feature-img {
+  margin-right: 25px;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-img img {
+  width: 80px;
+  height: 75px;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+}
+
+.customers {
+  background-image: url('/images/choose-us-bg-shape.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.customers-header {
+  color: black;
+  text-align: center;
+}
+
+table.table {
+  box-shadow: 0px 5px 10px 0px rgb(14 35 107 / 30%) !important;
+}
+
+table thead tr {
+  background-color: #eef4fb !important;
+  padding: 20px 30px;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.table > :not(caption) > * > * {
+  padding: 1.5rem 1.5rem !important;
+}
+
+table tbody tr:hover {
+  border-top: 1px solid var(--btn-button);
+  border-bottom: 1px solid var(--btn-button);
+}
+
+.investment-wrapper img {
+  height: 80px;
+  width: 80px;
+  margin-right: 10px;
 }
 
 .btn-login:hover {
@@ -309,6 +426,29 @@ button.navbar-toggler {
   color: var(--white) !important;
 }
 
+.offcanvas-top {
+  height: 60% !important;
+}
+
+h5.hero-info {
+  color: rgb(227, 233, 53) !important;
+}
+
+.translate-bg {
+  background-color: #112b4a;
+  padding: 0.5em;
+}
+
+a.nav-link {
+  color: #20628a !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+}
+
+h6.need-help {
+  color: rgba(253, 249, 249, 0.669) !important;
+}
+
 .footer {
   background-color: var(--btn-button);
   padding: 40px 30px;
@@ -316,11 +456,96 @@ button.navbar-toggler {
   bottom: 0;
 }
 
+.contact-us {
+  display: flex;
+  flex-direction: column;
+  padding: 10px auto !important;
+}
+
+p.contact-header {
+  margin-bottom: 0 !important;
+}
+
+.contact-header {
+  font-size: 12px;
+}
+
+.testimonial-section {
+  background-image: url(/images/affiliate-shape.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+  padding: 20px 10px;
+}
+
+.aff-features-items {
+  padding: 30px 50px;
+  border: 1px solid rgba(139, 139, 139, 0.5);
+  border-radius: 10px;
+  background-color: #ffffff;
+  z-index: 9;
+}
+
+.aff-features-items .icon {
+  border: 1px solid rgb(139, 139, 139);
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  margin-bottom: 30px;
+  border-radius: 50%;
+}
+
+.aff-features-items,
+.aff-left {
+  color: black;
+}
+
+.info span {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--btn-button);
+}
+
+.testimonial-wrapper {
+  color: black;
+  text-align: center;
+  background-image: url(/images/contest-shape.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+}
+
+.testimonial-video {
+  padding: 40px 20px;
+}
+
 /* register form */
 
 @media only screen and (max-width: 600px) {
-  .hero {
-    height: 56vh;
+  .btn-login {
+    margin: 10px auto !important;
+  }
+
+  .border-line {
+    border-top: 1px solid #a09f9f;
+    margin-top: 20px;
+    padding-top: 20px;
+    width: 100%;
+  }
+
+  .features-header h2,
+  .customers-header h2,
+  .aff-left h2,
+  .testimonial-video h2 {
+    font-size: 30px !important;
+  }
+
+  .features-header h4,
+  .customers-header h4,
+  .aff-left h4,
+  .testimonial-video h4 {
+    font-size: 18px !important;
   }
 
   .blockquote p {
@@ -331,15 +556,6 @@ button.navbar-toggler {
 
   img.navbar-brand {
     height: auto;
-    width: 50%;
-  }
-
-  .card {
-    margin-bottom: 20px;
-    padding: 25px !important;
-  }
-
-  .item {
     width: 70%;
   }
 
@@ -349,26 +565,6 @@ button.navbar-toggler {
 
   .gradient-1 {
     margin: 15px;
-  }
-
-  .Users-header {
-    font-size: 2em;
-    padding: 10px 30px;
-  }
-
-  .trader {
-    padding: 30px;
-  }
-
-  p.trader-info {
-    font-size: 14px;
-  }
-  .tools {
-    padding: 30px;
-  }
-
-  p.tools-info {
-    font-size: 14px;
   }
 
   .market-title,
@@ -384,7 +580,6 @@ button.navbar-toggler {
   }
 
   h1.hero-title {
-    margin-top: 35px;
     margin-bottom: 15px;
     font-size: 1.5rem;
   }
@@ -397,6 +592,13 @@ button.navbar-toggler {
     color: rgb(227, 233, 53);
   }
 
+  .features-header h2,
+  .customers-header h2,
+  .aff-left h2,
+  .testimonial-video h2 {
+    font-size: 30px;
+  }
+
   p.hero-help {
     font-weight: semi-bold;
   }
@@ -404,10 +606,14 @@ button.navbar-toggler {
   .footer-icons {
     justify-content: center;
   }
+
+  .email-content {
+    justify-content: center;
+  }
 }
 
 /* Medium devices (landscape tablets, 600px and up) */
-@media only screen and (min-width: 600px) {
+@media only screen and (max-width: 768px) {
   .market-title,
   .market-desc,
   .market-info,
@@ -416,28 +622,51 @@ button.navbar-toggler {
     margin-left: 20px;
   }
 
-  .hero-header {
-    margin: 20px auto;
+  .aff-features-items {
+    margin-bottom: 30px;
+    height: auto;
   }
 
-  .trader {
-    padding: 30px 60px;
+  .hero {
+    height: 55vh;
   }
 
-  p.trader-info {
-    font-size: 14px;
+  .investment-container {
+    width: 90%;
   }
 
-  .tools {
-    padding: 30px;
+  .features-header p,
+  .testimonial-video p {
+    padding: 5px 20px;
   }
 
-  p.tools-info {
-    font-size: 14px;
+  .aff-left {
+    text-align: center;
+  }
+
+  .border-line {
+    border-top: 1px solid #a09f9f;
+    margin-top: 20px;
+    padding-top: 20px;
+    width: 100%;
+  }
+
+  .feature-item {
+    margin-bottom: 20px !important;
+    margin-right: 0 !important;
+  }
+
+  .investment-wrapper img {
+    height: 65px;
+    width: 65px;
   }
 
   .card {
-    padding: 30px !important;
+    padding: 20px !important;
+  }
+
+  .email-content {
+    justify-content: center;
   }
 
   .market-desc {
@@ -445,13 +674,14 @@ button.navbar-toggler {
   }
 
   .hero-title {
-    width: 80%;
-    margin-top: 5px;
-    /* margin-bottom: 10px; */
+    margin-bottom: 10px;
   }
 
-  .first-accordion {
-    text-align: center;
+  .features-header h2,
+  .customers-header h2,
+  .aff-left h2,
+  .testimonial-video h2 {
+    font-size: 40px;
   }
 }
 
@@ -463,37 +693,40 @@ button.navbar-toggler {
     margin: 10px auto;
   }
 
+  .aff-features-items {
+    height: 27em;
+    margin-left: 30px;
+  }
+
+  p.hero-help {
+    width: 60%;
+  }
+
+  .features-header p,
+  .customers-header p,
+  .testimonial-video p {
+    padding: 10px 12rem;
+  }
+
+  .card {
+    padding: 35px !important;
+  }
+
+  .feature-item {
+    margin-bottom: 20px !important;
+  }
+
+  .contact-us {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .border-right {
+    border-right: 1px solid #a09f9f;
+  }
+
   .grid-section {
     overflow: visible !important;
-  }
-
-  .hero-header {
-    margin: 35px auto;
-  }
-
-  .item {
-    width: 50%;
-  }
-
-  .trader {
-    padding: 60px 120px;
-  }
-
-  p.trader-info {
-    font-size: 18px;
-  }
-
-  .tools {
-    padding: 30px;
-  }
-
-  p.tools-info {
-    font-size: 18px;
-  }
-
-  .Users-header {
-    font-size: 2em;
-    padding: 20px 40px;
   }
 
   .market-title,
@@ -509,7 +742,7 @@ button.navbar-toggler {
 
   .hero-title {
     width: 80%;
-    margin-top: 15px;
+    /* margin-top: 15px; */
     /* margin-bottom: 30px; */
   }
 

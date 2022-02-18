@@ -10,7 +10,7 @@
   integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
- <link rel="shortcut icon" href="/images/favicon (2).png" type="image/x-icon">
+ <link rel="shortcut icon" href="/images/favicon (3).png" type="image/x-icon">
 
  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
   integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous" />
@@ -25,7 +25,136 @@
 
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+ <style>
+  p.contact-header {
+   color: #fff !important;
+  }
 
+  .email-content {
+   justify-content: center;
+  }
+
+  .contact-header h6 {
+   color: #fff !important;
+  }
+
+  i.fa-bars {
+   color: #20628a !important;
+   font-size: 30px !important;
+  }
+
+  h5.hero-info {
+   color: rgb(227, 233, 53) !important;
+  }
+
+  .translate-bg {
+   background-color: #112b4a;
+   padding: 0.5em;
+  }
+
+  .hero {
+   margin-top: 0 !important;
+  }
+
+  a.nav-link {
+   color: #20628a !important;
+   font-weight: 500 !important;
+   font-size: 14px !important;
+  }
+
+  h6.need-help {
+   color: rgba(253, 249, 249, 0.669) !important;
+  }
+ </style>
 </head>
 
 <body>
+
+ <div class="container-fluid translate-bg">
+  <div class="container contact-us">
+   <div class="d-flex contact-header align-center email-content">
+    <h6 class="need-help">Need Help? Contact us</h6>
+
+    <p class="mx-2 contact-header">
+     <i class="fas fa-phone-alt"></i>
+     <span>+1 (520) 428-6607</span>
+    </p>
+   </div>
+   <div class="d-flex email-content">
+
+    <p class="mx-2 contact-header">
+     <i class="fas fa-envelope"></i>
+     support@ctebrokers.com
+    </p>
+   </div>
+  </div>
+ </div>
+
+ <nav class="navbar navbar-expand-md">
+  <div class="container text-white d-flex flex-row">
+   <a href="/">
+    <img src="/images/LogoMakr-green.png" class="navbar-brand">
+   </a>
+
+   <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+    aria-controls="offcanvasNavbar">
+    <i class="fas fa-bars"></i>
+   </button>
+
+   <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+     <li class="nav-item">
+      <a class="nav-link" href="#">Services</a>
+     </li>
+     <li class="nav-item">
+      <a class="nav-link" href="#">Markets</a>
+     </li>
+     <li class="nav-item">
+      <a class="nav-link" href="#">Data</a>
+     </li>
+
+
+     <li class="nav-item">
+      <a class="nav-link" href="#">Contact us</a>
+     </li>
+
+     <li class="nav-item">
+      <button class="btn-login"><a href="/login">Login</a></button>
+     </li>
+    </ul>
+   </div>
+
+   <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+    <div class="offcanvas-header">
+     <a href="/">
+      <img src="/images/LogoMakr-green.png" class="offcanvas-title">
+     </a>
+     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+
+    </div>
+    <div class="offcanvas-body">
+     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+      <li class="nav-item">
+       <a class="nav-link active item-canvas" aria-current="page" href="#">Home</a>
+      </li>
+      <li class="nav-item ">
+       <a class="nav-link item-canvas" href="#">Services</a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link item-canvas" href="#">Contact us</a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link item-canvas" href="#">Markets</a>
+      </li>
+
+      <li class="nav-item">
+       <button class="btn-login">
+        <a href="/login">Login</a>
+       </button>
+      </li>
+     </ul>
+
+    </div>
+   </div>
+  </div>
+ </nav>

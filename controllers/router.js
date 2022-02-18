@@ -27,6 +27,10 @@ router.get('/resetpassword', function (req, res) {
 
 router.post('/upload', upload)
 
+router.get('/upload', function (req, res) {
+  res.render('upload', {})
+})
+
 router.post('/resetpassword', resetPassword)
 
 router.get('/signout', signoutrouter)

@@ -9,13 +9,7 @@ const authVerify = async (req, res) => {
 
   if (user) {
     // The user object has basic properties such as display name, email, etc.
-    const displayName = user.displayName
     const email = user.email
-    const uid = user.uid
-
-    console.log(email)
-    console.log(uid)
-    console.log(displayName)
 
     res.render('auth-verification', {
       email: email,

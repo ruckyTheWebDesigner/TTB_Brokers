@@ -3,27 +3,39 @@ const {
   ref,
   uploadBytes,
   uploadString,
+  uploadFile,
 } = require('firebase/storage')
+require('firebase/storage')
+
+const cloudinary = require('cloudinary').v2
+
+cloudinary.config({
+  cloud_name: 'dbkpx9t5y',
+  api_key: '767644167824881',
+  api_secret: 'jCwtt-lpeksEkKYl7ueonxNJKV8',
+})
+
 const app = require('../config/db')
 
-const storage = getStorage(app)
+const storage = getStorage()
 
 const metadata = {
   contentType: 'image/jpeg',
 }
 
 // 'file' comes from the Blob or File API
-const upload = (req, res) => {
-  const file = req.body.filename
+const upload = async (req, res, next) => {
+  const file = req.file
 
-  const storageRef = ref(storage, 'images/')
-  const bytes = new Uint8Array([
-    0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x2c, 0x20, 0x77, 0x6f, 0x72, 0x6c, 0x64,
-    0x21,
-  ])
-  uploadBytes(storageRef, bytes, file, metadata).then((snapshot) => {
-    console.log('Uploaded an array!')
-  })
+  console.log(req.files)
+
+  const result = await cloudinary.uploader
+    .upload(file, { public_id: 'user' }, function (error, result) {
+      console.log(result)
+    })
+    .catch((err) => {
+      console.log(err)
+    })
 }
 
 module.exports = upload
